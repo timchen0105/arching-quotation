@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./icon.ico">
+    <script src="./scripts2.js"></script>
+    <title>工程報價單</title>
+</head>
+<body>
+    <header>
+      <nav class="navbar fixed-top navbar-light bg-light">
+        <div class="container-fluid inline">
+          <a class="nav-link logo" href="#"><img src="./logo-mobile.png" alt="logo" id="logo"></a>
+          <a class="nav-link gray" href="#wood">木作工程</a>
+          <a class="nav-link gray" href="#painting">油漆工程</a>
+          <a class="nav-link gray" href="#electric">水電工程</a>
+          <a class="nav-link gray" href="#cabinet">系統櫃工程</a>
+          <a class="nav-link gray" href="#floor">地板工程</a>
+          <a class="nav-link gray" href="#glass">玻璃工程</a>
+          <a class="nav-link gray" href="#clean">清潔工程</a>
+          <div class="untaxed_total_3">
+            <h4>小計：<span id="untaxed_total_3">0</span></h4>
+          </div>
+        </div>
+      </nav>
+      <!-- <div>
+        <h1 style="display: inline; color: rgb(228, 228, 228);">築青室內設計工程報價單</h1>
+      </div> -->
+    </header>
+    <div id="container">
+      <section id="wood">
+        <h3>木作工程</h3>
+        <div class="section_total">
+          <p>木作工程小計：<span id="wood_total">0</span></p>
+        </div>
+        <div class="container" id="wood_container">
+          <div id="wood_div" class="section_div" style="display: none;">
+            <select id="wood_select">
+              <option value="0" disabled selected hidden>請選擇建材</option>
+              <option value="4800">天花板 $4800/坪</option>
+              <option value="8000">高櫃(貼皮) $8000/尺</option>
+              <option value="6000">高櫃(白身) $6000/尺</option>
+              <option value="3500">矮櫃(貼皮) $3500/尺</option>
+              <option value="2500">矮櫃(白身) $2500/尺</option>
+              <option value="3000">壁板(木皮) $3000/尺</option>
+              <option value="2000">壁板(白身) $2000/尺</option>
+              <option value="20000">木門框(木皮) $20000/式</option>
+              <option value="15000">木門框(白身) $15000/式</option>
+            </select>
+            <input type="number" min="0" id="wood_num" style="width: 50px;" onchange="add('wood', this)">
+            <div class="subtotal">
+              <p>小計：<span id="wood_subtotal">0</span></p>
+            </div>
+            <button type="button" class="btn btn-outline-danger btn_delete" onclick="remove('wood', this)">移除</button>
+          </div>
+            
+        </div>
+        <button type="button" class="btn btn-outline-primary" onclick="create_new('wood')">新增</button>
+      </section>
+      <div class="divide">
+        <hr>
+      </div>
+      <section id="painting">
+        <h3>油漆工程</h3>
+        <div class="section_total">
+          <p>油漆工程小計：<span id="painting_total">0</span></p>
+        </div>
+        <div class="container" id="painting_container">
+  
+          <div id="painting_div" class="section_div" style="display: none;">
+            <select id="painting_select">
+              <option value="0" disabled selected hidden>請選擇建材</option>
+              <option value="1500">天花板 $1500/坪</option>
+              <option value="1200">高櫃(貼皮) $1200/尺</option>
+              <option value="2000">高櫃(烤漆) $2000/尺</option>
+              <option value="850">矮櫃(貼皮) $850/尺</option>
+              <option value="1200">矮櫃(白身) $1200/尺</option>
+              <option value="1000">壁板(木皮) $1000/尺</option>
+              <option value="1500">壁板(烤漆) $1500/尺</option>
+              <option value="6000">木門框(木皮) $6000/式</option>
+              <option value="7000">木門框(烤漆) $7000/式</option>
+              <option value="800">全室刷漆 $800/式</option>
+            </select>
+            <input type="number" min="0" id="painting_num" style="width: 50px;" onchange="add('painting', this)">
+            <div class="subtotal">
+              <p>小計：<span id="painting_subtotal">0</span></p>
+            </div>
+            <button type="button" class="btn btn-outline-danger btn_delete" onclick="remove('painting', this)">移除</button>
+          </div>
+            
+        </div>
+        <button type="button" class="btn btn-outline-primary" onclick="create_new('painting')">新增</button>
+      </section>
+      <div class="divide">
+        <hr>
+      </div>
+      <section id="electric">
+        <h3>水電工程</h3>
+        <div class="section_total">
+          <p>水電工程小計：<span id="electric_total">0</span></p>
+        </div>
+        <div class="container" id="electric_container">
+  
+          <div id="electric_div" class="section_div" style="display: none;">
+            <select id="electric_select">
+              <option value="0" disabled selected hidden>請選擇建材</option>
+              <option value="700">層板燈組 $700/組</option>
+              <option value="1000">崁燈 $1000/盞</option>
+              <option value="1100">開關切 $1100/切</option>
+              <option value="650">插座 $650/組</option>
+              <option value="3000">專插 $3000/組</option>
+              <option value="1500">網路線 $1500/組</option>
+              <option value="1000">電視線 $1000/組</option>
+              <option value="1000">電話線 $1000/組</option>
+              <option value="500">消防偵煙器位移 $500/組</option>
+              <option value="1300">灑水頭位移 $1300/組</option>
+            </select>
+            <input type="number" min="0" id="electric_num" style="width: 50px;" onchange="add('electric', this)">
+            <div class="subtotal">
+              <p>小計：<span id="electric_subtotal">0</span></p>
+            </div>
+            <button type="button" class="btn btn-outline-danger btn_delete" onclick="remove('electric', this)">移除</button>
+          </div>
+            
+        </div>
+        <button type="button" class="btn btn-outline-primary" onclick="create_new('electric')">新增</button>
+      </section>
+      <div class="divide">
+        <hr>
+      </div>
+      <section id="cabinet">
+        <h3>系統櫃工程</h3>
+        <div class="section_total">
+          <p>系統櫃工程小計：<span id="cabinet_total">0</span></p>
+        </div>
+        <div class="container" id="cabinet_container">
+  
+          <div id="cabinet_div" class="section_div" style="display: none;">
+            <select id="cabinet_select">
+              <option value="0" disabled selected hidden>請選擇建材</option>
+              <option value="5000">層板高櫃 $5000/尺</option>
+              <option value="3500">矮櫃 $3500/尺</option>
+              <option value="4500">衣櫃 $4500/尺</option>
+              <option value="1200">壁板 $1200/尺</option>
+              <option value="20000">滑門 $20000/式</option>
+              <option value="6000">書桌 $6000/尺</option>
+              <option value="3300">床板 $3300/尺</option>
+            </select>
+            <input type="number" min="0" id="cabinet_num" style="width: 50px;" onchange="add('cabinet', this)">
+            <div class="subtotal">
+              <p>小計：<span id="cabinet_subtotal">0</span></p>
+            </div>
+            <button type="button" class="btn btn-outline-danger btn_delete" onclick="remove('cabinet', this)">移除</button>
+          </div>
+            
+        </div>
+        <button type="button" class="btn btn-outline-primary" onclick="create_new('cabinet')">新增</button>
+      </section>
+      <div class="divide">
+        <hr>
+      </div>
+      <section id="floor">
+        <h3>地板工程</h3>
+        <div class="section_total">
+          <p>地板工程小計：<span id="floor_total">0</span></p>
+        </div>
+        <div class="container" id="floor_container">
+  
+          <div id="floor_div" class="section_div" style="display: none;">
+            <select id="floor_select">
+              <option value="0" disabled selected hidden>請選擇建材</option>
+              <option value="6500">木地板 $6500/坪</option>
+              <option value="5000">超耐磨地板 $5000/坪</option>
+              <option value="3000">塑膠地板 $3000/坪</option>
+            </select>
+            <input type="number" min="0" id="floor_num" style="width: 50px;" onchange="add('floor', this)">
+            <div class="subtotal">
+              <p>小計：<span id="floor_subtotal">0</span></p>
+            </div>
+            <button type="button" class="btn btn-outline-danger btn_delete" onclick="remove('floor', this)">移除</button>
+          </div>
+            
+        </div>
+        <button type="button" class="btn btn-outline-primary" onclick="create_new('floor')">新增</button>
+      </section>
+      <div class="divide">
+        <hr>
+      </div>
+      <section id="glass">
+        <h3>玻璃工程</h3>
+        <div class="section_total">
+          <p>玻璃工程小計：<span id="glass_total">0</span></p>
+        </div>
+        <div class="container" id="glass_container">
+  
+          <div id="glass_div" class="section_div" style="display: none;">
+            <select id="glass_select">
+              <option value="0" disabled selected hidden>請選擇建材</option>
+              <option value="130">明鏡 $130/才</option>
+              <option value="150">清玻璃 $150/才</option>
+              <option value="170">茶玻璃 $170/才</option>
+              <option value="350">烤漆玻璃 $350/才</option>
+              <option value="250">長虹玻璃 $250/才</option>
+            </select>
+            <input type="number" min="0" id="glass_num" style="width: 50px;" onchange="add('glass', this)">
+            <div class="subtotal">
+              <p>小計：<span id="glass_subtotal">0</span></p>
+            </div>
+            <button type="button" class="btn btn-outline-danger btn_delete" onclick="remove('glass', this)">移除</button>
+          </div>
+            
+        </div>
+        <button type="button" class="btn btn-outline-primary" onclick="create_new('glass')">新增</button>
+      </section>
+      <div class="divide">
+        <hr>
+      </div>
+      <section id="clean">
+        <h3>清潔工程</h3>
+        <div class="section_total">
+          <p>清潔工程小計：<span id="clean_total">0</span></p>
+        </div>
+        <div class="container" id="clean_container">
+  
+          <div id="clean_div" class="section_div" style="display: none;">
+            <select id="clean_select">
+              <option value="0" disabled selected hidden>請選擇建材</option>
+              <option value="6000">環保回收車 $6000/車</option>
+              <option value="700">空間面積 $700/坪</option>
+            </select>
+            <input type="number" min="0" id="clean_num" style="width: 50px;" onchange="add('clean', this)">
+            <div class="subtotal">
+              <p>小計：<span id="clean_subtotal">0</span></p>
+            </div>
+            <button type="button" class="btn btn-outline-danger btn_delete" onclick="remove('clean', this)">移除</button>
+          </div>
+            
+        </div>
+        <button type="button" class="btn btn-outline-primary" onclick="create_new('clean')">新增</button>
+      </section>
+      <div class="divide">
+        <hr>
+      </div>
+    </div>
+    <div class="tax_div">
+      <div class="untaxed_total">
+        <h4>小計：<span id="untaxed_total">0</span></h4>
+      </div>
+      <div class="tax">
+        <h4>稅金：<span id="untaxed_total_2">0</span> * <input type="number" min="0" id="tax_rate" value="5" style="width: 50px;" onchange="add_tax()">% = <span id="tax">0</span></h4>
+      </div>
+      <div class="total">
+        <h4>總工程款：<span id="total">0</span></h4>
+      </div>
+    </div>
+    <footer>
+
+    </footer>
+</body>
+</html>

@@ -1,0 +1,93 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    background-color: white;
+}
+
+body{
+    background-color: #EDEDE8;
+    margin: 0px 20px;
+    position: relative;
+}
+
+.logo{
+    padding: 2px;
+}
+
+#logo{
+    width: 200px;
+    height: auto;
+    display: inline;
+}
+
+.inline{
+    display: inline;
+}
+
+.gray{
+    color: gray;
+}
+
+.untaxed_total_3{
+    width: 175px;
+    margin-bottom: 0px;
+}
+
+.untaxed_total_3 h4{
+    margin: 0px;
+}
+
+#untaxed_total_3{
+    float: right;
+}
+
+#container{
+    position: relative;
+    padding: 0px 10px;
+    z-index: 1;
+}
+
+.btn_delete{
+    float: right;
+}
+
+.subtotal{
+    display: block;
+    position: relative;
+    top: 25px;
+}
+
+.subtotal p{
+    margin: 0px;
+}
+
+section{
+    padding-top: 80px;
+}
+
+.section_div{
+    background-color: #5e753225;
+    padding: 10px;
+    border: 1px solid green;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.divide{
+    position: relative;
+    top: 40px;
+}
+
+.divide hr{
+    margin: 0px;
+    color: gray;
+    height: 2px;
+}
+
+.tax_div{
+    padding: 70px 10px 10px 10px;
+}
